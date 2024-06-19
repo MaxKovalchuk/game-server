@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: game-server
+
+  ai:
+    openai:
+      api-key: 'sk-proj-poeZwZyraHUyec63Am25T3BlbkFJwkwCzAeq50DXVQLHMH96'
+
+kafka:
+  bootstrap-server: ${KAFKA_HOST:localhost:9092}
+  producer:
+    end-game-topic: "end-game"
+
+server:
+  name: ${SERVER_NAME:LOCAL}
+  port: ${SERVER_PORT:8081}
+
+scheduler:
+  cron:
+    end-game: '*/10 * * * * *' #every 10 seconds
